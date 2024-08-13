@@ -15,8 +15,5 @@ spring:
     
   cloud:
     config:
-      server:
-        git:
-          uri: "https://github.com/aouniR/healthcare-system-config"
-          searchPaths:
-            - "user-service"
+      uri: http://localhost:8888
+      failFast: true
