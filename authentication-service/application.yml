@@ -19,4 +19,4 @@ spring:
         git:
           uri: "https://github.com/aouniR/healthcare-system-config"
           searchPaths:
-            - "config-repo/authentication-service"
+            - "authentication-service"

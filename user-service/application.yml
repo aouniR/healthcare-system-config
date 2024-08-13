@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: user-service
+    url: http://user-service:8082
+    credentials:
+      username: user_service
+      password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
+    application-title: User Service
+    application-description: the user service for Healthcare-system with Spring-boot microservices architecture
+    application-version: 1.0
+    application-license: Dev API Licence
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/aouniR/healthcare-system-config"
+          searchPaths:
+            - "user-service"
