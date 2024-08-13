@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: authentication-service
+    url: http://authentication-service:8081
+    credentials:
+      username: auth_user
+      password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
+    application-title: Authentication Service
+    application-description: the authentication service for Healthcare-system with Spring-boot microservices architecture
+    application-version: 1.0
+    application-license: Dev API Licence
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/aouniR/healthcare-system-config"
+          searchPaths:
+            - "config-repo/authentication-service"
