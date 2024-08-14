@@ -16,8 +16,10 @@ spring:
     password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
     driver-class-name: org.postgresql.Driver
     initialization-mode: always
-
-
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
   cloud:
     config:
       uri: http://localhost:8888
