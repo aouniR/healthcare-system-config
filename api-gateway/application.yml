@@ -14,8 +14,6 @@ spring:
     config:
       uri: http://localhost:8888
       failFast: true
-
-  cloud:
     gateway:
       routes:
         - id: authentication-service
