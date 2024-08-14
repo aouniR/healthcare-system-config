@@ -11,7 +11,7 @@ spring:
     application-license: Dev API Licence
 
   datasource:
-    url: jdbc:postgresql://user-service-db:5432/userdb
+    url: jdbc:postgresql://localhost:5432/userdb
     username: user_service
     password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
     driver-class-name: org.postgresql.Driver
