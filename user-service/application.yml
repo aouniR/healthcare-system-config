@@ -5,19 +5,22 @@ spring:
   application:
     name: user-service
     url: http://user-service:8082
-    database:
-      url: jdbc:postgresql://user-service-db:5432/userdb
-      username: user_service
-      password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
     application-title: User Service
     application-description: the user service for Healthcare-system with Spring-boot microservices architecture
     application-version: 1.0
     application-license: Dev API Licence
-    
+
+  datasource:
+    url: jdbc:postgresql://user-service-db:5432/userdb
+    username: user_service
+    password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
+    driver-class-name: org.postgresql.Driver
+
   cloud:
     config:
       uri: http://localhost:8888
       failFast: true
+
 jwt:
   secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
   expiration-time: 86400000
