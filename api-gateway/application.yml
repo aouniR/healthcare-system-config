@@ -1,0 +1,44 @@
+server:
+  port: 8080  
+
+spring:
+  application:
+    name: api-gateway
+    url: http://api-gateway:8080
+    application-title: API Gateway
+    application-description: The API Gateway for Healthcare-system with Spring Boot microservices architecture
+    application-version: 1.0
+    application-license: Dev API Licence
+
+  cloud:
+    config:
+      uri: http://localhost:8888
+      failFast: true
+
+  cloud:
+    gateway:
+      routes:
+        - id: authentication-service
+          uri: lb://authentication-service  
+          predicates:
+            - Path=/api/v1/auth/**
+         id: user-service-route
+          uri: http://user-service:8082
+          predicates:
+            - Path=api/v1/user/**
+        - id: metamodel-service-route
+          uri: http://metamodel-service:8083
+          predicates:
+            - Path=api/v1/metamodel/**
+        - id: medical-record-service-route
+          uri: http://medical-record-service:8084
+          predicates:
+            - Path=api/v1/medical-record/**
+        - id: medical-component-service-route
+          uri: http://medical-component-service:8085
+          predicates:
+            - Path=api/v1/medical-component/**
+        - id: notification-service-route
+          uri: http://notification-service:8086
+          predicates:
+            - Path=api/v1/notification/**
