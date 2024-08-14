@@ -42,3 +42,6 @@ spring:
           uri: http://notification-service:8086
           predicates:
             - Path=api/v1/notification/**
+
+jwt:
+  secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
