@@ -8,10 +8,10 @@ spring:
     credentials:
       username: auth_user
       password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
-    application-title: Authentication Service
-    application-description: The authentication service for Healthcare-system with Spring Boot microservices architecture
-    application-version: 1.0
-    application-license: Dev API Licence
+    title: Authentication Service
+    description: The authentication service for Healthcare-system with Spring Boot microservices architecture
+    version: 1.0
+    license: Dev API Licence
     
   cloud:
     config:
