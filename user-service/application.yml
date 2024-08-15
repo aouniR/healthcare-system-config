@@ -14,12 +14,16 @@ spring:
     url: jdbc:postgresql://localhost:5432/userdb
     username: user_service
     password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
-    driver-class-name: org.postgresql.Driver
-    initialization-mode: always
-  jpa:
-    hibernate:
-      ddl-auto: update
-      
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+  flyway:
+    locations: classpath:/db/migration
+    schemas: user
+    baselineOnMigrate: true
+    enabled: true
+
   cloud:
     config:
       uri: http://localhost:8888
