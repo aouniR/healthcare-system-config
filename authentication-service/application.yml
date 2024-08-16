@@ -17,6 +17,12 @@ spring:
     config:
       uri: http://localhost:8888
       failFast: true
+      
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
 
 jwt:
   secret-key: "8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W="
