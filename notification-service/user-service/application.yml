@@ -1,0 +1,47 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: notification-service
+
+  datasource:
+    url: jdbc:postgresql://notification-service-db:5432/notificationdb
+    username: notification-service
+    password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+  kafka:
+    bootstrap-servers: broker:9092
+    consumer:
+      group-id: notification-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic:
+      name: notification-msg
+  cloud:
+    config:
+      uri: http://localhost:8888
+      failFast: true
+
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://eureka-server:8761/eureka/
+    instance:
+      prefer-ip-address: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
