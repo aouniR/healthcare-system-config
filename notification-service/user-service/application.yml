@@ -27,7 +27,8 @@ spring:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
     topic:
-      name: notification-msg
+      notification-events: notification-events-topic
+      user-events: user-events-topic
   cloud:
     config:
       uri: http://localhost:8888
