@@ -42,23 +42,7 @@ spring:
         defaultZone: http://localhost:8761/eureka/
     instance:
       prefer-ip-address: true
-  
-  kafka:
-    bootstrap-servers: localhost:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-    consumer:
-      group-id: user-service-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-    properties:
-      spring:
-        json:
-          trusted:
-            packages: "*"
-    topic:
-      user-events: user-events-topic
+
 
 jwt:
   secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
@@ -69,3 +53,20 @@ logging:
     org:
       springframework:
         security: DEBUG
+        
+kafka:
+  bootstrap-servers: localhost:9092
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  consumer:
+    group-id: user-service-group
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  properties:
+    spring:
+      json:
+        trusted:
+          packages: "*"
+  topic:
+    user-events: user-events-topic
