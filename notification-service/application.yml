@@ -39,19 +39,18 @@ spring:
         defaultZone: http://eureka-server:8761/eureka/
     instance:
       prefer-ip-address: true
-
-kafka:
-  bootstrap-servers: broker:9092
-  consumer:
-    group-id: notification-service-group
-    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-  producer:
-    key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: org.apache.kafka.common.serialization.StringSerializer
-  topic:
+  kafka:
+    bootstrap-servers: broker:9092
+    consumer:
+      group-id: notification-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic:
       user-events: user-events-topic
-      
+     
 logging:
   level:
     org.springframework.security: DEBUG
