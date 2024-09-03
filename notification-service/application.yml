@@ -41,7 +41,7 @@ spring:
       prefer-ip-address: true
 
 kafka:
-    bootstrap-servers: kafka-broker:9092
+    bootstrap-servers: localhost:9092
     consumer:
       group-id: notification-service-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
