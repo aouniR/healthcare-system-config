@@ -39,9 +39,9 @@ spring:
         defaultZone: http://eureka-server:8761/eureka/
     instance:
       prefer-ip-address: true
-      
+
   kafka:
-    bootstrap-servers: broker:9092
+    bootstrap-servers: localhost:9092
     consumer:
       group-id: notification-service-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
