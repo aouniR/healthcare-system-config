@@ -39,6 +39,7 @@ spring:
         defaultZone: http://eureka-server:8761/eureka/
     instance:
       prefer-ip-address: true
+      
   kafka:
     bootstrap-servers: broker:9092
     consumer:
