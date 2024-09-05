@@ -51,7 +51,13 @@ spring:
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
     topic:
       user-events: user-events-topic
-     
+
+jwt:
+  secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
+  expiration-time: 86400000
+
 logging:
   level:
-    org.springframework.security: DEBUG
+    org:
+      springframework:
+        security: DEBUG     
