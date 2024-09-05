@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: notification-service
+    application-title: Notification Service
+    application-description: The notification service for Healthcare-system with Spring-boot microservices architecture
+    application-version: 1.0
+    application-license: Dev API Licence
 
   datasource:
     url: jdbc:postgresql://localhost:5433/notificationdb
