@@ -3,15 +3,15 @@ server:
 
 spring:
   application:
-    name: notification-service
-    application-title: Notification Service
-    application-description: The notification service for Healthcare-system with Spring-boot microservices architecture
+    name: metamodel-service
+    application-title: MetaModel Service
+    application-description: The metamodel service for Healthcare-system with Spring-boot microservices architecture
     application-version: 1.0
     application-license: Dev API Licence
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/notificationdb
-    username: notification-service
+    url: jdbc:postgresql://localhost:5434/metamodeldb
+    username: metamodel-service
     password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
     driver-class-name: org.postgresql.Driver
     initialization-mode: always
@@ -47,17 +47,17 @@ spring:
   kafka:
     bootstrap-servers: broker:9092
     consumer:
-      group-id: notification-service-group
+      group-id: meta-model-service-group
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       properties:
-        spring.json.trusted.packages: com.healthcare.notification_service.dto
+        spring.json.trusted.packages: com.healthcare.metamodel_service.dto
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
     topic:
-      user-events: user-events-topic
       metamodel-events: metamodel-events-topic
+      composant-response-events: composant-response-topic
 jwt:
   secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
   expiration-time: 86400000
