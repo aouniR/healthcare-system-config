@@ -48,8 +48,8 @@ spring:
     bootstrap-servers: broker:9092
     consumer:
       group-id: meta-model-service-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
       properties:
         spring.json.trusted.packages: com.healthcare.metamodel_service.dto
     producer:
