@@ -1,0 +1,21 @@
+server:
+  port: 8080  
+
+spring:
+  application:
+    name: api-gateway
+    url: http://localhost:8080
+    application-title: API Gateway
+    application-description: The API Gateway for Healthcare-system with Spring Boot microservices architecture
+    application-version: 1.0
+    application-license: Dev API Licence
+    
+  eureka:
+    client:
+      service-url:
+        defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+    instance:
+      prefer-ip-address: true
+
+jwt:
+  secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
