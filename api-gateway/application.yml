@@ -10,11 +10,6 @@ spring:
     application-version: 1.0
     application-license: Dev API Licence
 
-  cloud:
-    config:
-      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
-      failFast: true
-  
   eureka:
     client:
       service-url:

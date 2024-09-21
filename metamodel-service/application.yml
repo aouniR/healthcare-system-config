@@ -31,11 +31,6 @@ spring:
     schemas: public
     baseline-on-migrate: true
     clean-disabled: false
-
-  cloud:
-    config:
-      uri: ${CONFIG_SERVER_URL:http://localhost:8888}
-      failFast: true
   
   eureka:
     client:
