@@ -1,0 +1,64 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: metamodel-service
+    application-title: MetaModel Service
+    application-description: The metamodel service for Healthcare-system with Spring-boot microservices architecture
+    application-version: 1.0
+    application-license: Dev API Licence
+
+  datasource:
+    url: jdbc:postgresql://localhost:5434/metamodeldb
+    username: metamodel-service
+    password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    schemas: public
+    baseline-on-migrate: true
+    clean-disabled: false
+  
+  eureka:
+    client:
+      service-url:
+        defaultZone: ${EUREKA_SERVER_URL:http://eureka-service:8761/eureka/}
+    instance:
+      prefer-ip-address: true
+
+  kafka:
+    bootstrap-servers: broker:9092
+    consumer:
+      group-id: meta-model-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.trusted.packages: com.healthcare.metamodel_service.dto
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    topic:
+      metamodel-events: metamodel-events-topic
+      composant-response-events: composant-response-topic
+jwt:
+  secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
+  expiration-time: 86400000
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG     
