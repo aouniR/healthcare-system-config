@@ -30,6 +30,9 @@ spring:
     schemas: public
     baseline-on-migrate: true
     clean-disabled: false
+    user: user_service 
+    password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
+    url: jdbc:postgresql://localhost:5432/userdb
   
   eureka:
     client:
