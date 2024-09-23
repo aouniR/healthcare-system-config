@@ -10,7 +10,7 @@ spring:
     application-license: Dev API Licence
 
   datasource:
-    url: jdbc:postgresql://metamodel-service-db:5434/metamodeldb
+    url: jdbc:postgresql://metamodel-service-db:5432/metamodeldb
     username: metamodel-service
     password: E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S
     driver-class-name: org.postgresql.Driver
