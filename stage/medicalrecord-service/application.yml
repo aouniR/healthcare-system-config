@@ -1,0 +1,45 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: medicalrecord-service
+    application-title: MedicalRecord Service
+    application-description: The medicalrecord service for Healthcare-system with Spring-boot microservices architecture
+    application-version: 1.0
+    application-license: Dev API Licence
+
+  data:
+    mongodb:
+      uri: mongodb://medicalrecord-user:E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S@medicalrecord-service-db:27018/medicalrecorddb
+  
+  eureka:
+    client:
+      service-url:
+        defaultZone: ${EUREKA_SERVER_URL:http://eureka-service:8761/eureka/}
+    instance:
+      prefer-ip-address: true
+
+  kafka:
+    bootstrap-servers: broker:9092
+    consumer:
+      group-id: medical-record-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.trusted.packages: com.healthcare.medicalrecord_service.dto
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    topic:
+      medicalRecord-events: medicalRecord-events-topic
+      metaModelListener-events: metaModelListener-events-topic
+jwt:
+  secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
+  expiration-time: 86400000
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG     
