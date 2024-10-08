@@ -11,7 +11,7 @@ spring:
 
   data:
     mongodb:
-      uri: mongodb://medicalrecord-user:E8C7D%j9@#G5Z!2u8q&1E8kLx9m^Wb7S@localhost:27018/medicalrecorddb
+      uri: mongodb://medicalrecord-user:1234@localhost:27018/medicalrecorddb
   
   eureka:
     client:
