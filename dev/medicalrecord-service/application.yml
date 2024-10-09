@@ -25,12 +25,12 @@ spring:
     consumer:
       group-id: medical-record-service-group
       key-deserializer: org.apache.kafka.common.serialization.StringSerializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-deserializer: org.springframework.kafka.support.serializer.StringSerializer
       properties:
         spring.json.trusted.packages: com.healthcare.medicalrecord_service.dto
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      value-serializer: org.springframework.kafka.support.serializer.StringSerializer
     topic:
       medicalRecord-events: medicalRecord-events-topic
       metaModelListener-events: metaModelListener-events-topic
