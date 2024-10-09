@@ -30,6 +30,7 @@ spring:
     schemas: public
     baseline-on-migrate: true
     clean-disabled: false
+    validateOnMigrate: false
   
   eureka:
     client:
