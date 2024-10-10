@@ -33,6 +33,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     topic:
       medicalRecord-events: medicalRecord-events-topic
+      MetaModelProducer-events: metaModelListener-events-topic
       metaModelListener-events: metaModelListener-events-topic
       medicalMonitoring-events: medicalMonitoring-events-topic
       medicalProcedure-events: medicalProcedure-events-topic
