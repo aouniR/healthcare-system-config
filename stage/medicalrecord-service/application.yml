@@ -30,7 +30,7 @@ spring:
         spring.json.trusted.packages: com.healthcare.medicalrecord_service.dto
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.JsonSerializer
     topic:
       medicalRecord-events: medicalRecord-events-topic
       metaModelListener-events: metaModelListener-events-topic
