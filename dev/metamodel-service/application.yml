@@ -52,7 +52,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     topic:
       metamodel-events: metamodel-events-topic
-      MetaModelProducer-events: metaModelListener-events-topic
+      metaModelProducer-events: metaModelListener-events-topic
       composant-response-events: metaModelListener-events-topic
 jwt:
   secret-key: 8bTjzD5Yl4I9jQ8M7G3wD1k+S3ZbqC+7e8A1aPqF2B4W=
